@@ -2,10 +2,18 @@ package edu.ujcv.progra1;
 import java.util.Arrays;
 public class QuickSort {
 
+    public long sort(Integer[] array) {
+        long start = System.currentTimeMillis();
+        quickSort(array,0,array.length-1);
 
+        long end = System.currentTimeMillis();
+
+        return end - start;
+    }
 
     public static void quickSort(Integer[] arr, int low, int high)
     {
+
         //check for empty or null array
         if (arr == null || arr.length == 0){
             return;
