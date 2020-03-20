@@ -13,30 +13,39 @@ public class Main {
         HeapSort heap = new HeapSort();
         QuickSort qk = new QuickSort();
         BubleSort Bub = new BubleSort();
+        MergeSort m = new MergeSort();
 
         // aqui pregunto si quiere ser po un arreglo ya hehco o aletorio
-        System.out.println("Desea un arreglo desordenado del 1 al 10 sencillo para ver las funciona correctamente \no un arrelgo desordena aletorio");
-        int 
-        int[] elementos = {3,2,4,5,6,7,9,9,10,3,5};
-        Integer[] array = new Integer[] {3,2,4,5,6,7,9,9,10,3,5};
+        int[] elementos = {3,2,4,5,6,7,9,9,10,1,3,5};
 
-
-        elementos = s.shuffleSort(elementos);
-
-        for (int i = 0; i < elementos.length; i++) {
-            System.out.println(elementos[i]);
-        }
-
-        elementos = new int[]{3,2,4,5,6,7,9,9,10,3,5};
-        System.out.println("\n\ntarda "+ s.sort(elementos)+ " milisegundos");
-
-
+        //Imprimo el arreglo como se ve
+        System.out.println((Arrays.toString(elementos)));
+        //Imrpimo el tiempo de cada algoritmo
+        //Merge
+        System.out.println("\n\ntarda "+ m.sort(elementos)+ " milisegundos");
+//heap
+        System.out.println("\n\ntarda "+ heap.sort(elementos)+ " milisegundos");
+//Bubble
+        System.out.println("\n\ntarda "+ Bub.sort(elementos)+ " milisegundos");
+        //Quick sort
+        System.out.println("\n\ntarda "+ qk.sort(elementos)+ " milisegundos");
 
         // Let's sort using quick sort
-        qk.quickSort( array, 0, array.length - 1 );
+        qk.quickSort( elementos, 0, elementos.length - 1 );
 
         // Verify sorted array
-        System.out.println(Arrays.toString(array));
+        System.out.println(Arrays.toString(elementos));
+
+
+
+
+
+
 
     }
 }
+// for (int i = 0; i < elementos.length; i++) {
+//   System.out.println(elementos[i]);
+// }
+//
+//elementos = s.shuffleSort(elementos);

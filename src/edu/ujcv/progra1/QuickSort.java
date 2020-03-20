@@ -2,16 +2,16 @@ package edu.ujcv.progra1;
 import java.util.Arrays;
 public class QuickSort {
 
-    public long sort(Integer[] array) {
+    public long sort(int[] array) {
         long start = System.currentTimeMillis();
-        quickSort(array,0,array.length-1);
+        quickSort(array,0,array.length - 1);
 
         long end = System.currentTimeMillis();
 
         return end - start;
     }
 
-    public static void quickSort(Integer[] arr, int low, int high)
+    public static void quickSort(int [] arr, int low, int high)
     {
 
         //check for empty or null array
@@ -60,7 +60,7 @@ public class QuickSort {
     }
 
 
-    public static void swap (Integer array[], int x, int y)
+    public static void swap (int array[], int x, int y)
     {
         int temp = array[x];
         array[x] = array[y];
