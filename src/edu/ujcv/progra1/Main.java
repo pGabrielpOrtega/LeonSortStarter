@@ -48,6 +48,7 @@ public class Main {
 
         int x = leerEntero(sc,"Ingrese el numero .-1 si desea ver que los algoritmos funcionan correctamente, cualquier otro numero para NO ","Error No se reconocio respuesta xd");
         if(x ==1){
+            //aqui copío los arreglos
             int[] e2 = new int[z];
             System.arraycopy(e1,0,e2,0,elementos.length-1);
 
@@ -59,6 +60,7 @@ public class Main {
 
             System.out.println("El Arreglo origiinal \n"+Arrays.toString(e1));
 
+            //Compruebo si funcionan
             qk.quickSort( e1, 0, elementos.length - 1 );
             System.out.println("Quick sort \n"+Arrays.toString(e1));
 
