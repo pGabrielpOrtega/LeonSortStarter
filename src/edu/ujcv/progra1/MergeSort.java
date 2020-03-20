@@ -11,37 +11,63 @@ public class MergeSort  implements SortTester{
         return end - start;
     }
 
-    private static int[] merge(int[] a, int[] b) {
-        int[] c = new int[a.length + b.length];
-        int i = 0;
-        int j = 0;
-        int k = 0;
-        while (i < a.length && j < b.length){
-            if (a[i] < b[j]) {
-                c[k++] = a[i++];
-            }else {
-                c[k++] = b[j++];
-            }
-        }
-        if(i < a.length){
-            System.arraycopy(a,i,c,k,c.length - k);
-        }else{
-            System.arraycopy(b,j,c,k,c.length - k);
-        }
-        return  c;
-    }
-    public static int[] mergeSort(int[] arr){
-        if(arr.length <= 1){
-            return arr;
-        }
-        int[] inf = new int[arr.length/2];
-        int[] sup = new int[arr.length - inf.length];
+    public int[] mergeSort(int[] a) {
 
-        System.arraycopy(arr,0,inf,0,inf.length);
-        System.arraycopy(arr,inf.length,sup,0,sup.length);
+        int[] inf = new int [a.length/2];
+        int[] sup = new int [a.length - inf.length];
+        int k =0;
+
+        if(a.length <= 1){
+            return a;
+        }
+
+        for (int i = 0; i < inf.length; i++) {
+
+            inf [i] = a [k++];
+
+        }
+
+        for (int i = 0; i < sup.length; i++) {
+
+            sup[i]= a[k++];
+        }
+
 
         return merge(mergeSort(inf),mergeSort(sup));
+    }
 
+    public static int[] merge(int[] inf, int[] sup ){
+
+        int [] retval = new int [inf.length + sup.length];
+
+        int i = 0, j = 0, k = 0;
+
+        for (  ; j < inf.length && k < sup.length; i++) {
+
+            if (inf[j] < sup[k]) {
+
+                retval[i] = inf[j++];
+
+            } else {
+
+                retval[i] = sup[k++];
+            }
+
+        }
+
+        if (j < inf.length){
+            for ( ; i < retval.length; i++) {
+                retval[i] = inf[j++];
+            }
+        }else if (k < sup.length){
+            for (; i < retval.length ; i++) {
+                retval[i] = sup[k++];
+
+            }
+
+        }
+
+        return retval;
     }
 
 
