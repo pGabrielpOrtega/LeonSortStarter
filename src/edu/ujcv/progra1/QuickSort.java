@@ -51,12 +51,14 @@ public class QuickSort {
         }
     }
 
+
     public static void swap (Integer array[], int x, int y)
     {
         int temp = array[x];
         array[x] = array[y];
         array[y] = temp;
     }
+
 }
 
 
