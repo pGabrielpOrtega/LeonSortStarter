@@ -7,7 +7,9 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         Scanner sc = new Scanner(System.in);
-        int y = leerEntero(sc,"Desea usar el Shuffle ya que es muy lento \n Si.-1 \n No cualquier otra tecla siendo esta un numero ","Error No se reconocio respuesta xd");
+        System.out.println("Desea agregar el Shuffle Sort");
+        int y = sc.nextInt();
+
         //Llamo a las demás clases
         ShuffleSort s = new ShuffleSort();
         HeapSort heap = new HeapSort();
@@ -16,7 +18,8 @@ public class Main {
         MergeSort m = new MergeSort();
 
         // aqui pongo el arreglo aletorio y copie el mismo para las comprobaciones en un nuevo arreglo
-        int z = 10; // z es el numero del tamaño del arreglo
+        System.out.println("Cuantos elelemente en arreglo desea");
+        int z = sc.nextInt(); // z es el numero del tamaño del arreglo
         int[] elementos = new int[z];
         int[] e1 = new int[z];
         Random r = new Random();
@@ -47,8 +50,8 @@ public class Main {
             System.out.println("\nShuffle Sort tarda "+ s.sort(elementos)+ " milisegundos");}
 
 
-
-        int x = leerEntero(sc,"\nDesea ver si los algoritmos funcioan correctamente \n 1.-Si \n Cualquier otra tecla para no siendo está un numero","Error No se reconocio respuesta xd");
+        System.out.println("Desea ver si los algoritmos funcioan correctamente");
+        int x = sc.nextInt();
         if(x ==1){
             //aqui copío los arreglos
             int[] e2 = new int[z];
@@ -82,27 +85,10 @@ if(y==1){
             e5 = s.shuffleSort(e5);
             System.out.println("\nShuffle Sort \n"+Arrays.toString(e5));}
         }
-
-
-
-
-
-
-
-
     }
 
-    public static int leerEntero(Scanner sc,String mensaje, String mensajeError) {
-        int retval = 0;
-        System.out.println(mensaje);
-        while (!sc.hasNextInt()) {
-            sc.nextLine();
-            System.out.println(mensajeError);
-        }
-        retval = sc.nextInt();
-        sc.nextLine();
-        return retval;
-    }}
+   }
+
 // for (int i = 0; i < elementos.length; i++) {
 //   System.out.println(elementos[i]);
 // }
