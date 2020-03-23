@@ -5,7 +5,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+    }
+}
+
+
+
+	/* // write your code here
         Scanner sc = new Scanner(System.in);
         System.out.println("Desea agregar el Shuffle Sort");
         int y = sc.nextInt();
@@ -48,9 +53,10 @@ public class Main {
         //ShuffleSort
         if(y==1){
             System.out.println("\nShuffle Sort tarda "+ s.sort(elementos)+ " milisegundos");}
+    }
+}*/
 
-
-        System.out.println("Desea ver si los algoritmos funcioan correctamente");
+        /*System.out.println("Desea ver si los algoritmos funcioan correctamente");
         int x = sc.nextInt();
         if(x ==1){
             //aqui copío los arreglos
@@ -94,4 +100,4 @@ if(y==1){
 // }
 //
 //elementos = s.shuffleSort(elementos);
-//int[] elementos = {3,2,4,5,6,7,9,9,10,1,3,5};
+//int[] elementos = {3,2,4,5,6,7,9,9,10,1,3,5};*/
