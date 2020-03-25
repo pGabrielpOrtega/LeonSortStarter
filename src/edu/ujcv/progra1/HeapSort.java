@@ -12,18 +12,42 @@ public class HeapSort implements SortTester {
 
         return end - start;
     }
+    public void heapSort(int [] array){
+        int n = array.length;
+        for (int i = n/2-1; i >= 0; i--) {
+            Flotar(array, n, i);
 
-    public static int[] heapSort(int[] array) {
+        }
+        for (int i = n-1; i >=0; i--) {
 
-        // cambiar priority queue por su propia implementacion!!
-        PriorityQueue <Integer> queue = new PriorityQueue<>();
-        for (Integer i: array) {
-            queue.add(i);
+            int temp = array[0];
+            array[0] = array[i];
+            array[i] = temp;
+
+            Flotar(array,i,0);
         }
-        for (int i = 0; i < array.length; i++) {
-            array[i] = queue.remove();
-        }
-        return array;
     }
 
-}
+    public void Flotar(int [] arr,int n, int i) {
+
+        int padre = i;
+        int hijoIzquierdo = i * 2 + 1;
+        int hijoDerecho = i * 2 + 2;
+        if (hijoIzquierdo < n && arr[hijoIzquierdo] > arr[padre]) {
+            padre = hijoIzquierdo;
+        }
+
+        if (hijoDerecho < n && arr[hijoDerecho] > arr[padre]) {
+            padre = hijoDerecho;
+        }
+
+        if (padre != i) {
+
+            int temp = arr[i];
+            arr[i] = arr[padre];
+            arr[padre] = temp;
+
+            Flotar(arr, n, padre);
+        } }}
+
+
