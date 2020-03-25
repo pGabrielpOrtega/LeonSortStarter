@@ -29,10 +29,10 @@ public class HeapSort implements SortTester {
     }
 
     public void Flotar(int [] arr,int n, int i) {
-
         int padre = i;
         int hijoIzquierdo = i * 2 + 1;
         int hijoDerecho = i * 2 + 2;
+
         if (hijoIzquierdo < n && arr[hijoIzquierdo] > arr[padre]) {
             padre = hijoIzquierdo;
         }

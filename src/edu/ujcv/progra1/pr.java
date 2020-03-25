@@ -10,7 +10,7 @@ public class pr {
         pr d = new pr();
         System.out.println("Cuantos elementos en el arreglo desea ");
         int z = sc.nextInt(); // z es el numero del tamaño del arreglo
-        System.out.println("\nCantidad de numero para el random osea 10,1000,etc");
+        System.out.println("\nCantidad de numero para el random osea entre el 0 al que usted desea para la generación aleatoria ");
         int cv = sc.nextInt();
         int[] elementos = new int[z];
         int[] elementos2 = new int[z];
